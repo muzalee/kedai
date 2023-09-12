@@ -33,8 +33,6 @@ import { Checkout1Component } from './pages/checkout/checkout-1.component';
 import { Checkout2Component } from './pages/checkout/checkout-2.component';
 import { CartCardComponent } from './components/cart/cart-card.component';
 import { HttpClientModule } from '@angular/common/http';
-import { LoginComponent } from './pages/auth/login/login.component';
-import { RegisterComponent } from './pages/auth/register/register.component';
 
 @NgModule({
   declarations: [
@@ -53,8 +51,6 @@ import { RegisterComponent } from './pages/auth/register/register.component';
     PaymentErrorComponent,
     PaymentSuccessComponent,
     CartCardComponent,
-    LoginComponent,
-    RegisterComponent,
   ],
   imports: [
     BrowserModule,
