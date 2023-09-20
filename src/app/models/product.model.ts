@@ -10,7 +10,7 @@ export class Product {
     this.id = data.id;
     this.name = data.name;
     this.description = data.description;
-    this.image = data.image;
+    this.image = `assets/${data.image}`;
     this.formattedPrice = data.formattedPrice;
   }
 }
