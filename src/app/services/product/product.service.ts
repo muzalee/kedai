@@ -8,7 +8,7 @@ import { ImageItem } from 'ng-gallery';
 })
 export class ProductService {
   public products: Product[] = [];
-  public carouselItems: ImageItem[];
+  public carouselItems: ImageItem[] = [];
 
   isLoading: boolean = false;
 
@@ -16,19 +16,21 @@ export class ProductService {
     private httpService: HttpService,
   ) {}
 
-  getProduct() {
+  getProduct(categoryId: number | null) {
     this.isLoading = true;
-    this.httpService.get('product').subscribe(
+    this.httpService.get(`product?categoryId=${categoryId ?? ''}`).subscribe(
       (r) => {
         if (Array.isArray(r)) {
           this.products = r.map((item) => new Product(item));
         }
-        this.carouselItems = this.products.map((product) => {
-          return new ImageItem({
-            src: product.image,
-            thumb: product.image,
+        if (this.carouselItems.length == 0) {
+          this.carouselItems = this.products.map((product) => {
+            return new ImageItem({
+              src: product.image,
+              thumb: product.image,
+            });
           });
-        });
+        }
         this.isLoading = false;
       },
       (_) => {

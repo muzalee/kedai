@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.categoryService.getCategories();
-    this.productService.getProduct();
+    this.productService.getProduct(null);
   } 
 
   get isLoggedIn(): boolean {
@@ -30,6 +30,6 @@ export class HomeComponent implements OnInit {
   }
 
   onSelectCategory(categoryId: number | null) {
-    this.categoryService.selectedCategory = categoryId;
+    this.productService.getProduct(categoryId);
   }
 }
