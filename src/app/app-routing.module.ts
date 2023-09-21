@@ -9,7 +9,7 @@ import { PaymentSuccessComponent } from './pages/payment/payment-success/payment
 import { PaymentErrorComponent } from './pages/payment/payment-error/payment-error.component';
 import { Checkout1Component } from './pages/checkout/checkout-1.component';
 import { Checkout2Component } from './pages/checkout/checkout-2.component';
-import { OrderComponent } from './pages/order/order/order.component';
+import { OrderComponent } from './pages/order/order.component';
 
 const routes: Routes = [
   {
