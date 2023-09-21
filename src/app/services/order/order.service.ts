@@ -21,8 +21,8 @@ export class OrderService {
     this.isLoading = true;
     this.httpService.get('order').subscribe(
       (r) => {
-        if (Array.isArray(r)) {
-          this.orders = r.map((item) => new Order(item));
+        if (Array.isArray(r['data'])) {
+          this.orders = r['data'].map((item) => new Order(item));
         }
         this.isLoading = false;
       },

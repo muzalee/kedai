@@ -8,6 +8,6 @@ export class Order {
   constructor(data: any) {
     this.orderNo = data.orderNo,
     this.total = data.total ?? '0.00';
-    this.carts = data.carts == null ? [] : data.items.map((item) => new Cart(item));
+    this.carts = data.carts == null ? [] : data.carts.map((item) => new Cart(item));
   }
 }
