@@ -21,6 +21,7 @@ import { ProductCardComponent } from './components/product/product-card.componen
 import { NotFoundComponent } from './pages/404/404.component';
 import { ErrorDialogComponent } from './components/error-dialog/error-dialog.component';
 import { CartComponent } from './pages/cart/cart.component';
+
 import { ProductDialogComponent } from './components/product/product-dialog.component';
 import { PaymentErrorComponent } from './pages/payment/payment-error/payment-error.component';
 import { PaymentSuccessComponent } from './pages/payment/payment-success/payment-success.component';
@@ -30,7 +31,8 @@ import { Checkout2Component } from './pages/checkout/checkout-2.component';
 import { CartCardComponent } from './components/cart/cart-card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
-import { Order } from './models/order.model';
+import { OrderCardComponent } from './components/order/order-card/order-card.component';
+import { OrderComponent } from './pages/order/order/order.component';
 
 @NgModule({
   declarations: [
@@ -44,12 +46,14 @@ import { Order } from './models/order.model';
     ErrorDialogComponent,
     ConfirmationDialogComponent,
     CartComponent,
+    OrderComponent,
     ProductDialogComponent,
     Checkout1Component,
     Checkout2Component,
     PaymentErrorComponent,
     PaymentSuccessComponent,
     CartCardComponent,
+    OrderCardComponent,
   ],
   imports: [
     BrowserModule,
