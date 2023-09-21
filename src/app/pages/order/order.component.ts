@@ -1,15 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { OrderService } from 'src/app/services/order/order.service';
 import { ProductService } from 'src/app/services/product/product.service';
 @Component({
   selector: 'app-order',
   templateUrl: './order.component.html'
 })
-export class OrderComponent {
+export class OrderComponent implements OnInit {
   constructor(
-    public productService: ProductService
-    ) {}
+    public orderService: OrderService
+  ) {}
+
+  ngOnInit(): void {
+    this.orderService.getOrders();
+  }
 
   get isLoading(): boolean {
-    return this.productService.isLoading;
+    return this.orderService.isLoading;
   } 
 }
