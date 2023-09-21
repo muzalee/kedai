@@ -29,6 +29,10 @@ export class MainHeaderComponent implements OnInit {
     this.router.navigate(['/auth/login']);
   }
 
+  redirectToOrder() {
+    this.router.navigate(['/order']);
+  }
+
   get isLoggedIn(): boolean {
     return this.authService.isLoggedIn;
   }
