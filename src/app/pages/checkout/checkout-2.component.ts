@@ -9,7 +9,7 @@ import { StripeService } from 'src/app/services/stripe/stripe.service';
 })
 export class Checkout2Component implements OnInit {
   @ViewChild('cardElement') cardElement: ElementRef;
-  checkoutId: string;
+  orderNo: string;
 
   constructor(
     private stripeService: StripeService, 
@@ -20,7 +20,10 @@ export class Checkout2Component implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      this.checkoutId = params.get('checkout_id');
+      this.orderNo = params.get('order_no');
+      if (this.checkoutService.checkoutData == null || this.checkoutService.checkoutData.orderNo != this.orderNo) {
+        this.router.navigate(['/cart']);
+      }
     });
   }
 
@@ -29,7 +32,7 @@ export class Checkout2Component implements OnInit {
   }
 
   async handlePayment() {
-    this.stripeService.handlePayment(this.checkoutId);
+    this.stripeService.handlePayment();
   }
 
   get isLoad() {
@@ -37,14 +40,14 @@ export class Checkout2Component implements OnInit {
   }
 
   previous() {
-    this.router.navigate(['/checkout/1', this.checkoutId]);
+    this.router.navigate(['/checkout/1', this.orderNo]);
   }
 
   get total() {
-    let data = this.checkoutService.getCheckoutData;
-    if (data && (this.checkoutId != data.id)) {
+    let data = this.checkoutService.checkoutData;
+    if (data && (this.orderNo != data.orderNo)) {
       data = null;
     }
-    return data ? `Total Price: ${data.total}` : 'No order detected';
+    return data ? `Total Price: RM ${data.total}` : 'No order detected';
   }
 }
