@@ -30,8 +30,8 @@ export class CartComponent implements OnInit {
     }
   }
 
-  get total(): string {
-    return this.cartService.cart.total;
+  get totalFormatted(): string {
+    return this.cartService.cart.totalFormatted;
   }
 
   get cartAvailable(): boolean {
@@ -42,11 +42,9 @@ export class CartComponent implements OnInit {
     this.isChecking = true;
      
     try {
-      const response = await this.checkoutService.generateCheckoutToken('');
-      this.checkoutService.setCheckoutData(response);
-      this.router.navigate(['/checkout/1', response.id]);
-    } catch (e) {
-      this.customDialogService.openErrorDialog(e.message);
+      await this.checkoutService.checkout(this.cartService.cart.total, this.authService.getUser.displayName, 
+        this.authService.getUser.email, this.cartService.cart.getItemIds());
+      this.router.navigate(['/checkout/1', this.checkoutService.checkoutData.orderNo]);
     } finally {
       this.isChecking = false;
     }
