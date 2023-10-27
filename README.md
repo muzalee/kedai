@@ -13,52 +13,51 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - list of orders
 
 Some of the screenshots:
-![Home](https://github.com/muzalee/kedai/src/assets/screenshot/home.png)
+![Home](https://github.com/muzalee/kedai/blob/main/src/assets/screenshot/home.png)
 
-![Cart](https://github.com/muzalee/kedai/src/assets/screenshot/cart.png)
-Post delete confirmation, data in the table will be updated after delete.
+![Cart](https://github.com/muzalee/kedai/blob/main/src/assets/screenshot/cart.png)
 
-![Checkout](https://github.com/muzalee/kedai/src/assets/screenshot/checkout.png)
+![Checkout](https://github.com/muzalee/kedai/blob/main/src/assets/screenshot/checkout.png)
 
 ## Directory
 use tree or tree /F command to generate
-.
-└───src
-    ├───app
-    │   ├───components
-    │   │   ├───cart
-    │   │   ├───confirmation-dialog
-    │   │   ├───error-dialog       
-    │   │   ├───order
-    │   │   └───product
-    │   ├───layout
-    │   │   ├───body
-    │   │   ├───header
-    │   │   └───main-header
-    │   ├───models
-    │   ├───pages
-    │   │   ├───404
-    │   │   ├───auth
-    │   │   │   ├───login
-    │   │   │   └───register
-    │   │   ├───cart
-    │   │   ├───checkout
-    │   │   ├───home
-    │   │   ├───order
-    │   │   └───payment
-    │   │       ├───payment-error
-    │   │       └───payment-success
-    │   └───services
-    │       ├───auth
-    │       ├───cart
-    │       ├───category
-    │       ├───checkout
-    │       ├───custom-dialog
-    │       ├───http
-    │       ├───order
-    │       ├───product
-    │       └───stripe
-    └───environments
+.\
+└───src\
+    ├───app\
+    │   ├───components\
+    │   │   ├───cart\
+    │   │   ├───confirmation-dialog\
+    │   │   ├───error-dialog\
+    │   │   ├───order\
+    │   │   └───product\
+    │   ├───layout\
+    │   │   ├───body\
+    │   │   ├───header\
+    │   │   └───main-header\
+    │   ├───models\
+    │   ├───pages\
+    │   │   ├───404\
+    │   │   ├───auth\
+    │   │   │   ├───login\
+    │   │   │   └───register\
+    │   │   ├───cart\
+    │   │   ├───checkout\
+    │   │   ├───home\
+    │   │   ├───order\
+    │   │   └───payment\
+    │   │       ├───payment-error\
+    │   │       └───payment-success\
+    │   └───services\
+    │       ├───auth\
+    │       ├───cart\
+    │       ├───category\
+    │       ├───checkout\
+    │       ├───custom-dialog\
+    │       ├───http\
+    │       ├───order\
+    │       ├───product\
+    │       └───stripe\
+    └───environments\
 
 ## Development server
 
